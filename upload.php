@@ -6,7 +6,13 @@ if(isset($_POST["image_url"])) {
 
 	if(filter_var($_POST["image_url"], FILTER_VALIDATE_URL)) {
 		
-		$allowed_extension = array("jpg", "png", "jpeg", "gif");
+		$allowed_extension = [
+			"jpg", 
+			"png", 
+			"jpeg", 
+			"gif"
+		];
+		
 		$url_array         = explode("/", $_POST["image_url"]);
 		$image_name        = end($url_array);
 		$image_array       = explode(".", $image_name);
