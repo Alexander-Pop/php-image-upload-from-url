@@ -13,10 +13,10 @@ if(isset($_POST["image_url"])) {
 			"gif"
 		];
 
-		$url_array         = explode("/", $_POST["image_url"]);
-		$image_name        = end($url_array);
-		$image_array       = explode(".", $image_name);
-		$extension         = end($image_array);
+		$url_array   = explode("/", $_POST["image_url"]);
+		$image_name  = end($url_array);
+		$image_array = explode(".", $image_name);
+		$extension   = end($image_array);
 
 		if(in_array($extension, $allowed_extension)) {
 			$image_data     = file_get_contents($_POST["image_url"]);
@@ -34,8 +34,8 @@ if(isset($_POST["image_url"])) {
 	}
 
 	$output = [
-		'message'	=>	$message,
-		'image'		=>	$image
+		'message' => $message,
+		'image'	  => $image
 	];
 
 	echo json_encode($output);
