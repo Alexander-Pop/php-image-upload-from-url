@@ -12,7 +12,7 @@ if(isset($_POST["image_url"])) {
 			"jpeg", 
 			"gif"
 		];
-		
+
 		$url_array         = explode("/", $_POST["image_url"]);
 		$image_name        = end($url_array);
 		$image_array       = explode(".", $image_name);
@@ -33,10 +33,10 @@ if(isset($_POST["image_url"])) {
 		$message = 'Invalid Url';
 	}
 
-	$output = array(
+	$output = [
 		'message'	=>	$message,
 		'image'		=>	$image
-	);
+	];
 
 	echo json_encode($output);
 }
